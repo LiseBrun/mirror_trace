@@ -18,16 +18,18 @@
 var materials = {
 		'mirror' : [false, false, false, false, false, false, false, false],
 		'file_names' : ["https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/sample.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trialh1.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trialh2.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trialh3.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trial1.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trial2.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trial3.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/sample.png"],
-		'xstarts' : [47,	27,		40,		280,		27, 40, 280, 33],
-		'ystarts' : [256,	275,	45,		276,		275, 45, 276, 250],
-		'xends' :   [344,	370,	368,	33,			370, 368, 33, 47],
-		'yends' :    [260,	28,		267,	250,		28,267,250, 256]
-	}
+	//	'xstarts' : [47,	27,		40,		280,		27, 40, 280, 33],
+	//	'ystarts' : [256,	275,	45,		276,		275, 45, 276, 250],
+	//	'xends' :   [344,	370,	368,	33,			370, 368, 33, 47],
+	//	'yends' :    [260,	28,		267,	250,		28,267,250, 256]
+	//}
 	
-	//	'xstarts' : [47,	27,		40,		280,		40,		383,	352],
-//		'ystarts' : [256,	275,	45,		276,		45,		265,	28],
-//		'xends' :   [344,	370,	368,	33,			368,	28,		35],
-//		'yends' :    [260,	28,		267,	250,		267,	15,		175]
+		'xstarts' : [47,	27,		40,		280,		40,		383,	352],
+		'ystarts' : [256,	275,	45,		276,		45,		265,	28],
+		'xends' :   [344,	370,	368,	33,			368,	28,		35],
+		'yends' :    [260,	28,		267,	250,		267,	15,		175]
+
+}
 
 	//for saving screenshots
 	// the script can save screenshots of completed trials.  
