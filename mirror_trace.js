@@ -228,11 +228,11 @@ function do_mirror() {
 			endTime = new Date();
 			timeDiff = (endTime - startTime)/1000;
 			
-			if (inline) {
+			//if (inline) {
 				ctx_mirror.strokeStyle = 'white';
-			} else {
+			//} else {
 				ctx_mirror.strokeStyle = 'red';
-			}
+			//}
 
 			if (mirror) {
 				ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
