@@ -17,11 +17,20 @@
 
 var materials = {
 		'mirror' : [false, false, false, false, false, false, false, false],
-		'file_names' : ["https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/sample.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trialh1.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trialh2.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trialh3.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trial1.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trial2.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/trial3.png", "https://raw.githubusercontent.com/rcalinjageman/mirror_trace/master/sample.png"],
-		'xstarts' : [46,	30,		34,		124,		29,	 32, 	125, 	33],
-		'ystarts' : [261,	267,		33,		20,		267,	 34, 	18, 	250],
-		'xends' :   [347,	373,		359,		363,		374,	 359, 	364, 	47],
-		'yends' :   [261,	20,		250,		48,		20,    	 251,	49, 	256]
+		'file_names' : ["https://github.com/LiseBrun/mirror_trace/blob/master/sample.png", 
+				"https://github.com/LiseBrun/mirror_trace/blob/master/trialh1.png", 
+				"https://github.com/LiseBrun/mirror_trace/blob/master/trialh2.png", 
+				"https://github.com/LiseBrun/mirror_trace/blob/master/trialh3.png",
+				"https://github.com/LiseBrun/mirror_trace/blob/master/trial1.png", 
+				"https://github.com/LiseBrun/mirror_trace/blob/master/trial2.png", 
+				"https://github.com/LiseBrun/mirror_trace/blob/master/trial3.png", 
+				"https://github.com/LiseBrun/mirror_trace/blob/master/trial4.png",
+			        "https://github.com/LiseBrun/mirror_trace/blob/master/trial5.png",
+			        "https://github.com/LiseBrun/mirror_trace/blob/master/trial6.png"],
+		'xstarts' : [46,	30,		34,		124,		29,	 32, 	125, 	34,	16,	52],
+		'ystarts' : [261,	267,		33,		20,		267,	 34, 	18, 	34,	36,	278],
+		'xends' :   [347,	373,		359,		363,		374,	 359, 	364, 	359,	375,	364],
+		'yends' :   [261,	20,		250,		48,		20,    	 251,	49, 	253,	285,	127]
 	}
 	
 	//	'xstarts' : [47,	27,		40,		280,		40,		383,	352],
