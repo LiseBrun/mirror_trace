@@ -229,7 +229,7 @@ function do_mirror() {
 			timeDiff = (endTime - startTime)/1000;
 			
 			if (inline) {
-				ctx_mirror.strokeStyle = 'green';
+				ctx_mirror.strokeStyle = 'blue';
 			} else {
 				ctx_mirror.strokeStyle = 'red';
 			}
