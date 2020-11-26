@@ -15,6 +15,7 @@
 // currently this displays 3 difficult trials (h1, h2, and h3) and 3 regular trials (4, 5, 6)
 // the images posted on github all have the same total line length and 15 segments 
 
+//for this study, mirror = false
 var materials = {
 		'mirror' : [false, false, false, false, false, false, false, false],
 		'file_names' : ["https://github.com/LiseBrun/mirror_trace/blob/master/sample.png", 
@@ -27,18 +28,11 @@ var materials = {
 				"https://github.com/LiseBrun/mirror_trace/blob/master/trial4.png",
 			        "https://github.com/LiseBrun/mirror_trace/blob/master/trial5.png",
 			        "https://github.com/LiseBrun/mirror_trace/blob/master/trial6.png"],
-		'xstarts' : [46,	30,		34,		124,		29,	 32, 	125, 	34,	16,	52],
-		'ystarts' : [261,	267,		33,		20,		267,	 34, 	18, 	34,	36,	278],
-		'xends' :   [347,	373,		359,		363,		374,	 359, 	364, 	359,	375,	364],
-		'yends' :   [261,	20,		250,		48,		20,    	 251,	49, 	253,	285,	127]
+		'xstarts' : [46,	30,	34,	124,	29,	 32, 	125, 	34,	16,	52],
+		'ystarts' : [261,	267,	33,	20,	267,	 34, 	18, 	34,	36,	278],
+		'xends' :   [347,	373,	359,	363,	374,	 359, 	364, 	359,	375,	364],
+		'yends' :   [261,	20,	250,	48,	20,    	 251,	49, 	253,	285,	127]
 	}
-	
-	//	'xstarts' : [47,	27,		40,		280,		40,		383,	352],
-	//	'ystarts' : [256,	275,		45,		276,		45,		265,	28],
-	//	'xends' :   [344,	370,		368,		33,		368,		28,	35],
-	//	'yends' :    [260,	28,		267,		250,		267,		15,	175]
-
-//}
 
 	//for saving screenshots
 	// the script can save screenshots of completed trials.  
@@ -234,9 +228,9 @@ function do_mirror() {
 			timeDiff = (endTime - startTime)/1000;
 			
 			if (inline) {
-				ctx_mirror.strokeStyle = 'red';
-			} else {
 				ctx_mirror.strokeStyle = 'blue';
+			} else {
+				ctx_mirror.strokeStyle = 'red';
 			}
 
 			if (mirror) {
