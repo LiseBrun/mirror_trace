@@ -240,7 +240,7 @@ function do_mirror() {
 				ctx_mirror.lineTo(mouse.x, mouse.y);
 			}
 			ctx_mirror.stroke();		
-			document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
+			//document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
 			//document.getElementByID("status").innerHTML = p[0]+p[1]+p[2];
 
 		} else {
