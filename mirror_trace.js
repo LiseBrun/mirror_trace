@@ -18,7 +18,7 @@
 //for this study, mirror = false
 var materials = {
 		'mirror' : [false, false, false, false, false, false, false, false],
-		'file_names' : ["https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/sample.png", 
+		'file_names' : ["https://github.com/LiseBrun/mirror_trace/blob/master/sample.png", 
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh1.png", 
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh2.png", 
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh3.png",
