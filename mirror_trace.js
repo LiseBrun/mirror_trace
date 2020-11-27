@@ -232,7 +232,7 @@ function do_mirror() {
 				ctx_mirror.strokeStyle = 'white';
 			} else {
 				ctx_mirror.strokeStyle = 'red';
-			//}
+			}
 
 			if (mirror) {
 				ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
