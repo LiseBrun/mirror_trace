@@ -228,9 +228,9 @@ function do_mirror() {
 			endTime = new Date();
 			timeDiff = (endTime - startTime)/1000;
 			
-			//if (inline) {
+			if (inline) {
 				ctx_mirror.strokeStyle = 'white';
-			//} else {
+			} else {
 				ctx_mirror.strokeStyle = 'red';
 			//}
 
@@ -258,22 +258,22 @@ function do_mirror() {
 				//	ctx_mirror.arc(xstart, ystart, startRadius, 0, 2 * Math.PI, false);
 				}
 	           // ctx_mirror.fill();
-				ctx_mirror.globalAlpha=1
+				//ctx_mirror.globalAlpha=1
 				
-				ctx_mirror.beginPath();
-				if (mirror) {
-					ctx_mirror.arc(mywidth-mouse.x, myheight-mouse.y, 4, 0, 2 * Math.PI, false);
-				} else {
-					ctx_mirror.arc(mouse.x, mouse.y, 4, 0, 2 * Math.PI, false);
-				}
-				ctx_mirror.fillStyle = 'green';
-				ctx_mirror.fill();
-				lastRefresh = currentRefresh
-				document.getElementById("status").innerHTML = "Click the green circle to begin this trial"; 
-			}
-			} else {
-				//document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
-			}
+				//ctx_mirror.beginPath();
+				//if (mirror) {
+					//ctx_mirror.arc(mywidth-mouse.x, myheight-mouse.y, 4, 0, 2 * Math.PI, false);
+				//} else {
+					//ctx_mirror.arc(mouse.x, mouse.y, 4, 0, 2 * Math.PI, false);
+				//}
+				//ctx_mirror.fillStyle = 'green';
+				//ctx_mirror.fill();
+				//lastRefresh = currentRefresh
+				//document.getElementById("status").innerHTML = "Click the green circle to begin this trial"; 
+			//}
+			//} else {
+			//	document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
+			//}
 		}
 		 
 		 
