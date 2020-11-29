@@ -228,10 +228,11 @@ function do_mirror() {
 			endTime = new Date();
 			timeDiff = (endTime - startTime)/1000;
 			
+			 //trace in transparent
 			if (inline) {
-				ctx_mirror.strokeStyle = 'white';
+				ctx_mirror.strokeStyle = 'ffffff00';
 			} else {
-				ctx_mirror.strokeStyle = 'red';
+				ctx_mirror.strokeStyle = 'ffffff00';
 			}
 
 			if (mirror) {
@@ -328,14 +329,14 @@ function do_mirror() {
 	}, false);
 	 
 	 
-	//var onPaint = function() {
-			//if(mirror) {
-			//ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
-			//} else {
-			//ctx_mirror.lineTo(mouse.x, mouse.y);
-			//}
-			//ctx_mirror.stroke();
-	//};
+	var onPaint = function() {
+			if(mirror) {
+			ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
+			} else {
+			ctx_mirror.lineTo(mouse.x, mouse.y);
+			}
+			ctx_mirror.stroke();
+	};
 
 
 function betterPos(canvas, evt) {
