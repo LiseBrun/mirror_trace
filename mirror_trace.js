@@ -257,23 +257,23 @@ function do_mirror() {
 				} else {
 				//	ctx_mirror.arc(xstart, ystart, startRadius, 0, 2 * Math.PI, false);
 				}
-	           // ctx_mirror.fill();
-				//ctx_mirror.globalAlpha=1
+	           ctx_mirror.fill();
+				ctx_mirror.globalAlpha=1
 				
-				//ctx_mirror.beginPath();
-				//if (mirror) {
-					//ctx_mirror.arc(mywidth-mouse.x, myheight-mouse.y, 4, 0, 2 * Math.PI, false);
-				//} else {
-					//ctx_mirror.arc(mouse.x, mouse.y, 4, 0, 2 * Math.PI, false);
-				//}
-				//ctx_mirror.fillStyle = 'green';
-				//ctx_mirror.fill();
-				//lastRefresh = currentRefresh
-				//document.getElementById("status").innerHTML = "Click the green circle to begin this trial"; 
-			//}
-			//} else {
-			//	document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
-			//}
+				ctx_mirror.beginPath();
+				if (mirror) {
+					ctx_mirror.arc(mywidth-mouse.x, myheight-mouse.y, 4, 0, 2 * Math.PI, false);
+				} else {
+					ctx_mirror.arc(mouse.x, mouse.y, 4, 0, 2 * Math.PI, false);
+				}
+				ctx_mirror.fillStyle = 'green';
+				ctx_mirror.fill();
+				lastRefresh = currentRefresh
+				document.getElementById("status").innerHTML = "Click the green circle to begin this trial"; 
+			}
+			} else {
+				document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
+			}
 		}
 		 
 		 
@@ -328,14 +328,14 @@ function do_mirror() {
 	}, false);
 	 
 	 
-	var onPaint = function() {
-			if(mirror) {
-			ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
-			} else {
-			ctx_mirror.lineTo(mouse.x, mouse.y);
-			}
-			ctx_mirror.stroke();
-	};
+	//var onPaint = function() {
+			//if(mirror) {
+			//ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
+			//} else {
+			//ctx_mirror.lineTo(mouse.x, mouse.y);
+			//}
+			//ctx_mirror.stroke();
+	//};
 
 
 function betterPos(canvas, evt) {
