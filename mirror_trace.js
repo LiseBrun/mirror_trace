@@ -230,9 +230,9 @@ function do_mirror() {
 			
 			 //trace in transparent
 			if (inline) {
-				ctx_mirror.strokeStyle = 'ffffff00';
+				ctx_mirror.strokeStyle = 'green' ;
 			} else {
-				ctx_mirror.strokeStyle = 'ffffff00';
+				ctx_mirror.strokeStyle = 'red';
 			}
 
 			if (mirror) {
