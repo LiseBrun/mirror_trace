@@ -272,9 +272,9 @@ function do_mirror() {
 				lastRefresh = currentRefresh
 				document.getElementById("status").innerHTML = "Click the green circle to begin this trial"; 
 			}
-			} else {
-				document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
-			}
+// 			} else {
+// 				document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
+// 			}
 		}
 		 
 		 
