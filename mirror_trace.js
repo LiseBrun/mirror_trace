@@ -229,6 +229,13 @@ function do_mirror() {
 			timeDiff = (endTime - startTime)/1000;
 			
 			 //trace in transparent
+			// if (inline) {
+			// 	ctx_mirror.strokeStyle = '#ffffff00';
+			// } else {
+			// 	ctx_mirror.strokeStyle = '#ffffff00';
+			// }
+			 
+			 //trace in color
 			if (inline) {
 				ctx_mirror.strokeStyle = 'green' ;
 			} else {
@@ -241,6 +248,7 @@ function do_mirror() {
 				ctx_mirror.lineTo(mouse.x, mouse.y);
 			}
 			ctx_mirror.stroke();		
+			//remove score display during task : l 252:
 			//document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
 			//document.getElementByID("status").innerHTML = p[0]+p[1]+p[2];
 
@@ -272,9 +280,10 @@ function do_mirror() {
 				lastRefresh = currentRefresh
 				document.getElementById("status").innerHTML = "Click the green circle to begin this trial"; 
 			}
-// 			} else {
+			} else {
+			//remove score display at the end of the task: l285:
 // 				document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
-// 			}
+ 			}
 		}
 		 
 		 
