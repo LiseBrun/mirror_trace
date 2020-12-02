@@ -27,6 +27,7 @@ var materials = {
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial3.png", 
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial4.png",
 			        "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial5.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial6.png",
 			        "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/losange.png",
 			       	"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/square.png",
 			       	"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/triangle.png"],
