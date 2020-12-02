@@ -28,12 +28,13 @@ var materials = {
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial4.png",
 			        "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial5.png",
 			        "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/losange.png",
-			       	"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/square.png"],
+			       	"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/square.png",
+			       	"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/triangle.png"],
 			       
-		'xstarts' : [46,	30,	34,	124,	29,	 32, 	125, 	34,	16,	52, 	35,	63],
-		'ystarts' : [261,	267,	33,	20,	267,	 34, 	18, 	34,	36,	278, 	145,	39],
-		'xends' :   [347,	373,	359,	363,	374,	 359, 	364, 	359,	375,	364, 	40,	63],
-		'yends' :   [261,	20,	250,	48,	20,    	 251,	49, 	253,	285,	127, 	152,	255]
+		'xstarts' : [46,	30,	34,	124,	29,	 32, 	125, 	34,	16,	52, 	35,	63,	197],
+		'ystarts' : [261,	267,	33,	20,	267,	 34, 	18, 	34,	36,	278, 	145,	39,	35],
+		'xends' :   [347,	373,	359,	363,	374,	 359, 	364, 	359,	375,	364, 	40,	63,	193],
+		'yends' :   [261,	20,	250,	48,	20,    	 251,	49, 	253,	285,	127, 	152,	255,	40]
 	}
 
 	//for saving screenshots
