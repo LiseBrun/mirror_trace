@@ -27,12 +27,12 @@ var materials = {
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial3.png", 
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial4.png",
 			        "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial5.png",
-			        "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial6.png"],
+			        "https://raw.githubusercontent.com/LiseBrun/mirror_trace/blob/master/losange.png"],
 			       
-		'xstarts' : [46,	30,	34,	124,	29,	 32, 	125, 	34,	16,	52],
-		'ystarts' : [261,	267,	33,	20,	267,	 34, 	18, 	34,	36,	278],
-		'xends' :   [347,	373,	359,	363,	374,	 359, 	364, 	359,	375,	364],
-		'yends' :   [261,	20,	250,	48,	20,    	 251,	49, 	253,	285,	127]
+		'xstarts' : [46,	30,	34,	124,	29,	 32, 	125, 	34,	16,	52, 	35],
+		'ystarts' : [261,	267,	33,	20,	267,	 34, 	18, 	34,	36,	278, 	145],
+		'xends' :   [347,	373,	359,	363,	374,	 359, 	364, 	359,	375,	364, 	35],
+		'yends' :   [261,	20,	250,	48,	20,    	 251,	49, 	253,	285,	127, 	145]
 	}
 
 	//for saving screenshots
