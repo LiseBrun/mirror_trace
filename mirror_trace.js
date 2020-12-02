@@ -284,8 +284,10 @@ function do_mirror() {
 				document.getElementById("status").innerHTML = "Cliquez sur le cercle vert pour commencer cet essai."; 
 			}
 			} else {
-			//remove score display at the end of the task: l285:
-// 				document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue."; 
+			//remove score display at the end of the task: 
+// 				document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
+			//display "you have finished the task"
+				document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquer sur la flèche à droite pour continuer."; 
  			}
 		}
 		 
