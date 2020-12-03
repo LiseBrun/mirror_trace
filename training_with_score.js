@@ -73,7 +73,7 @@ var materials = {
 
 
 
-function do_mirror() {
+function do_training() {
 	//load materials
 	var imagePath = materials.file_names[trialnumber];
 	mirror = materials.mirror[trialnumber];
@@ -252,7 +252,7 @@ function do_mirror() {
 			}
 			ctx_mirror.stroke();
 			//remove score display during task :
-			//document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
+			document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
 			//document.getElementByID("status").innerHTML = p[0]+p[1]+p[2];
 
 		} else {
@@ -285,9 +285,9 @@ function do_mirror() {
 			}
 			} else {
 				//remove score display at the end of the task:
-				//document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
+				document.getElementById("status").innerHTML = "Score final = " + Math.round(score *100) + "%<BR> Cliquez sur la flèche à droite pour continuer.";
 				//display "you have finished the task"
-				document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
+				//document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
 			}
 		}
 
