@@ -17,7 +17,7 @@
 
 //for this study, mirror = false
 var materials = {
-		'mirror' : [false, false, false, false, false, false, false, false, false, false, false, false, false],
+		'mirror2' : [false, false, false, false, false, false, false, false, false, false, false, false, false],
 		'file_names' : ["https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/sample.png",
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh1.png",
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh2.png",
@@ -26,8 +26,8 @@ var materials = {
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial2.png",
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial3.png",
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial4.png",
-			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial5.png",
-			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial6.png",
+			  	"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial5.png",
+			  	"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial6.png",
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/losange.png",
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/square.png",
 				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/triangle.png"],
@@ -73,10 +73,10 @@ var materials = {
 
 
 
-function do_training() {
+function do_mirror2() {
 	//load materials
 	var imagePath = materials.file_names[trialnumber];
-	mirror = materials.mirror[trialnumber];
+	mirror2 = materials.mirror2[trialnumber];
 	var xstart = materials.xstarts[trialnumber];
 	var ystart = materials.ystarts[trialnumber];;
 	var startRadius = 15;
@@ -116,7 +116,7 @@ function do_training() {
 	   ctx.globalAlpha=0.4;
 
 	   ctx.beginPath();
-	    if (mirror) {
+	    if (mirror2) {
 			ctx.arc(xstart, ystart, startRadius, 0, 2 * Math.PI, false);
 		} else {
 			ctx.arc(xstart, ystart, startRadius, 0, 2 * Math.PI, false);
@@ -159,13 +159,13 @@ function do_training() {
 
 		//document.getElementById("status").innerHTML = "x = " + x + " y = " + y + " mousex = " + mouse.x + " mousey = " + mouse.y;
 
-		 if (mirror) {
+		 if (mirror2) {
 			var coord = "x=" +  (mywidth-x) + ", y=" + (myheight-y);
 		} else {
 			var coord = "x=" +  (x) + ", y=" + (y);
 		}
 
-		if (mirror) {
+		if (mirror2) {
                       var p = ctx_mirror.getImageData(mywidth-mouse.x, myheight-mouse.y, 1, 1).data;
 		} else {
 		      var p = ctx_mirror.getImageData(mouse.x, mouse.y, 1, 1).data;
@@ -245,7 +245,7 @@ function do_training() {
 				ctx_mirror.strokeStyle = 'red';
 			}
 
-			if (mirror) {
+			if (mirror2) {
 				ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
 			} else {
 				ctx_mirror.lineTo(mouse.x, mouse.y);
@@ -264,7 +264,7 @@ function do_training() {
 				ctx_mirror.fillStyle = 'green';
 				ctx_mirror.globalAlpha=0.4;
 				//ctx_mirror.beginPath();
-	            if (mirror) {
+	            if (mirror2) {
 				//	ctx_mirror.arc(mywidth - xstart, myheight - ystart, startRadius, 0, 2 * Math.PI, false);
 				} else {
 				//	ctx_mirror.arc(xstart, ystart, startRadius, 0, 2 * Math.PI, false);
@@ -273,7 +273,7 @@ function do_training() {
 				ctx_mirror.globalAlpha=1
 
 				ctx_mirror.beginPath();
-				if (mirror) {
+				if (mirror2) {
 					ctx_mirror.arc(mywidth-mouse.x, myheight-mouse.y, 4, 0, 2 * Math.PI, false);
 				} else {
 					ctx_mirror.arc(mouse.x, mouse.y, 4, 0, 2 * Math.PI, false);
@@ -319,7 +319,7 @@ function do_training() {
 						ctx_mirror.fillStyle = 'red';
 						ctx_mirror.globalAlpha=0.4;
 						ctx_mirror.beginPath();
-						if (mirror) {
+						if (mirror2) {
 							ctx_mirror.arc(mywidth - xend, myheight - yend, endRadius, 0, 2 * Math.PI, false);
 						} else {
 							ctx_mirror.arc(xend, yend, endRadius, 0, 2 * Math.PI, false);
@@ -331,7 +331,7 @@ function do_training() {
 						finished = false;
 						startTime = new Date();
 						ctx_mirror.beginPath();
-						if (mirror) {
+						if (mirror2) {
 							ctx_mirror.moveTo(mywidth-mouse.x, myheight-mouse.y);
 						} else {
 							ctx_mirror.moveTo(mouse.x, mouse.y);
@@ -344,7 +344,7 @@ function do_training() {
 
 
 	var onPaint = function() {
-			if(mirror) {
+			if(mirror2) {
 			ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
 			} else {
 			ctx_mirror.lineTo(mouse.x, mouse.y);
