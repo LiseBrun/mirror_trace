@@ -232,18 +232,18 @@ function do_mirror() {
 			timeDiff = (endTime - startTime)/1000;
 			
 			 //trace in transparent
-			// if (inline) {
-			// 	ctx_mirror.strokeStyle = '#ffffff00';
-			// } else {
-			// 	ctx_mirror.strokeStyle = '#ffffff00';
-			// }
+			 if (inline) {
+			 	ctx_mirror.strokeStyle = '#ffffff00';
+			 } else {
+			 	ctx_mirror.strokeStyle = '#ffffff00';
+			 }
 			 
 			 //trace in color
-			if (inline) {
-				ctx_mirror.strokeStyle = 'green' ;
-			} else {
-				ctx_mirror.strokeStyle = 'red';
-			}
+			//if (inline) {
+			//	ctx_mirror.strokeStyle = 'green' ;
+			//} else {
+			//	ctx_mirror.strokeStyle = 'red';
+			//}
 
 			if (mirror) {
 				ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
