@@ -274,7 +274,7 @@ function do_mirror() {
 			// 	ctx_mirror.strokeStyle = '#ffffff00';
 			// }
 
-			trace in color
+			//trace in color
 			if (inline) {
 				ctx_mirror.strokeStyle = 'green';
 			} else {
