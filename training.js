@@ -1,49 +1,65 @@
-// This set of scripts implements a mirror trace task suitable for online use with Qualtrics
-// It was written by Bob Calin-Jageman
-// I was learning javascript as a I went; the code is stitched together from various online sources; sorry it is not very elegant
-// You can see a demo of this script in action at: https://dom.az1.qualtrics.com/jfe/form/SV_eeSj6E3YyI8nxdP
-// And you can see how pre-screening to ensure browser compatibility works here: https://dom.az1.qualtrics.com/jfe/form/SV_0lEq6SBvvT5LAj3
+//for this script, mirror = false
+//for this script, tracing = color
 
-
-// this object contains the materials for the task -
-//   the mirror property say if that trial should be mirrored
-//   the file_names property give the file names for the images to use for each trial.
-          // NOTE: Currently this points to images hosted on the github site for this project.  You can change this but be sure:
-		  // That the images are hosted on an https server with a flag set to allow cross-domain loading of images
-//    xstarts, ystarts are the coordinates for the green dot that sets the trial start
-//    xends, yends are the coordinates for where the trial ends
-// currently this displays 3 difficult trials (h1, h2, and h3) and 3 regular trials (4, 5, 6)
-// the images posted on github all have the same total line length and 15 segments
-
-//for this study, mirror = false
 var materials = {
-		'mirror' : [false, false, false, false, false, false, false, false, false, false, false, false, false],
-		'file_names' : ["https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/sample.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh1.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh2.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trialh3.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial1.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial2.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial3.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial4.png",
-			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial5.png",
-			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/trial6.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/losange.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/square.png",
-				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/triangle.png"],
+		'mirror' : [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+		'file_names' : [
+			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T0e.png",
+			  "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T0h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T1e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T1h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T2e.png",
+				//5
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T2h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T3e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T3h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T4e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T4h.png",
+				//10
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T5e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T5h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T6e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T6h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T7e.png",
+				//15
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T7h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T8e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T8h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T9e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T9h.png",
+				//20
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T01e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T01h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T02e.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T02h.png",
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T10e.png",
+				//25
+				"https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T10h.png"
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T0e60.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T0e80.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/T0e100.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/ligne.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/github/ligne10.png"
+			],
 
-		'xstarts' : [46,	30,	34,	124,	29,	 32, 	125, 	34,	16,	52, 	35, 	63,	197],
-		'ystarts' : [261,	267,	33,	20,	267,	34, 	18, 	34,	36,	278, 	145, 	39,	35],
-		'xends' :   [347,	373,	359,	363,	374,	 359, 	364, 	359,	375,	364, 40, 	63,	181],
-		'yends' :   [261,	20,	250,	48,	20,    	 251,	49, 	253,	285,	127, 152,	255,	61]
+		'xstarts' : [32, 32, 35, 35, 95, 33, 317, 139, 278, 149, 284, 361, 359, 360, 305, 305, 67, 198, 52, 52, 5, 5, 311, 311, 35, 35],
+		'ystarts' : [59, 59, 92, 44, 53, 113, 247, 31, 28, 256, 42, 255, 213, 238, 261, 261, 229, 178, 264, 264, 138, 138, 81, 81, 28, 172],
+		'xends' :   [298, 298, 333, 333, 245, 183, 228, 218, 179, 247, 88, 164, 71, 71, 47, 47, 187, 317, 310, 310, 327, 327, 20, 20, 249, 249],
+		'yends' :   [243, 243, 262, 213, 172, 231, 143, 134, 255, 28, 218, 231, 254, 178, 10, 10, 83, 130, 14, 14, 163, 163, 220, 220, 66, 211]
 	}
+
+// 	'xstarts' : [32, 32, 32, 73, 86],
+// 	'ystarts' : [59, 59, 59, 228, 203],
+// 	'xends' :   [299, 299, 299, 326, 292],
+// 	'yends' :   [242, 242, 242, 47, 70]
+// }
 
 	//for saving screenshots
 	// the script can save screenshots of completed trials.
 	// to use this feature, set saveTrace to true and set saveScript to your server.  Your server will need a php script for accepting the files.
 	// the php script is posted on github
-	var saveScript = "https://calin-jageman.net/mirror_trace/save.php"
-	var saveTrace = false;
+	// var saveScript = "https://calin-jageman.net/mirror_trace/save.php"
+	// var saveTrace = false;
 
 
 	//image dimensions
@@ -71,9 +87,19 @@ var materials = {
 	var lastRefresh = 0;
 	var currentRefresh = 0;
 
+	// click on "enter" when they want to finish the trial
+	var press_enter = false;
+	addEventListener("keyup", function(event) {
+	 if (event.key === "Enter") {
+		 drawing = false;
+		 finished = true;
+		 document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
+		 // document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
+	 }
+ });
 
 
-function do_mirror1() {
+function do_training() {
 	//load materials
 	var imagePath = materials.file_names[trialnumber];
 	mirror = materials.mirror[trialnumber];
@@ -107,14 +133,17 @@ function do_mirror1() {
 	ctx = canvas.getContext('2d');
 	canvas_mirror = document.querySelector('#mirror');
 	ctx_mirror = canvas_mirror.getContext('2d');
+  //remove the mouse cursor display
+	//canvas.style.cursor = 'none';
 
 	//load the image to trace
 	var imageObj = new Image();
       imageObj.onload = function() {
-       ctx_mirror.drawImage(imageObj, 0, 0, mywidth, myheight);
+     ctx_mirror.drawImage(imageObj, 0, 0, mywidth, myheight);
 	   ctx_mirror.globalAlpha=0.4;
 	   ctx.globalAlpha=0.4;
 
+  //Beginning of trial
 	   ctx.beginPath();
 	    if (mirror) {
 			ctx.arc(xstart, ystart, startRadius, 0, 2 * Math.PI, false);
@@ -133,10 +162,11 @@ function do_mirror1() {
 
 	//defines data structure for mouse movement
 	var mouse = {x: 0, y: 0};
-        var mouseold = {x: 0, y: 0};
+  var mouseold = {x: 0, y: 0};
 
 	/* Drawing on Paint App */
-	ctx_mirror.lineWidth = 1.2;
+	// Width (largeur) of line
+	ctx_mirror.lineWidth = 0.5;
 	ctx_mirror.lineJoin = 'round';
 	ctx_mirror.lineCap = 'round';
 	ctx_mirror.strokeStyle = 'blue';
@@ -173,6 +203,7 @@ function do_mirror1() {
                 var hex = "#" + ("000000" + rgbToHex(p[0], p[1], p[2])).slice(-6);
 
 		 var cendRadius = Math.sqrt(Math.pow(mouse.x - xend, 2) + Math.pow(mouse.y-yend, 2));
+
 		 if (cendRadius < endRadius) {
 		  if (drawing) {
 			drawing = false;
@@ -183,6 +214,7 @@ function do_mirror1() {
 			}
 		  }
 		}
+
 
 		 //do drawing if in drawing mode
 		 if(drawing) {
@@ -226,12 +258,16 @@ function do_mirror1() {
 				}
 			}
 
-			distance_total = distance_total + distance_current;
-			score = distance_inline / distance_total;
+			//distance_total = distance_total + distance_current;
+			// old score calculation
+			// score = distance_inline / distance_total;
+			//
+			score = distance_inline / (distance_offline + distance_inline);
+			// score = distance_current;
 			endTime = new Date();
 			timeDiff = (endTime - startTime)/1000;
 
-			//trace in transparent
+			// //trace in transparent
 			// if (inline) {
 			// 	ctx_mirror.strokeStyle = '#ffffff00';
 			// } else {
@@ -285,9 +321,9 @@ function do_mirror1() {
 			}
 			} else {
 				//remove score display at the end of the task:
-				document.getElementById("status").innerHTML = "Score final = " + Math.round(score *100) + "%<BR> Click next to continue.";
+				document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
 				//display "you have finished the task"
-				//document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
+				// document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
 			}
 		}
 
@@ -303,7 +339,7 @@ function do_mirror1() {
 	canvas.addEventListener('mousedown', function(e) {
 	        var currentRadius = Math.sqrt(Math.pow(mouse.x - xstart, 2) + Math.pow(mouse.y-ystart, 2));
 
-	        if(!finished) {
+	      if(!finished) {
 				if (drawing) {
 					//drawing = false;
 					//finished = true;
@@ -312,6 +348,7 @@ function do_mirror1() {
 						//call save function
 						//savecanvas(canvas_mirror.toDataURL())
 					//}
+
 				} else {
 				    if (currentRadius < startRadius) {
 					    ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -331,6 +368,7 @@ function do_mirror1() {
 						finished = false;
 						startTime = new Date();
 						ctx_mirror.beginPath();
+						canvas.style.cursor = 'none';
 						if (mirror) {
 							ctx_mirror.moveTo(mywidth-mouse.x, myheight-mouse.y);
 						} else {
@@ -342,7 +380,6 @@ function do_mirror1() {
 
 	}, false);
 
-
 	var onPaint = function() {
 			if(mirror) {
 			ctx_mirror.lineTo(mywidth-mouse.x, myheight-mouse.y);
@@ -351,7 +388,6 @@ function do_mirror1() {
 			}
 			ctx_mirror.stroke();
 	};
-
 
 function betterPos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
@@ -382,37 +418,37 @@ function rgbToHex(r, g, b) {
     return ((r << 16) | (g << 8) | b).toString(16);
 }
 
-function saveCanvas() {
-
-	// Get the canvas screenshot as PNG
-	var screenshot = Canvas2Image.saveAsPNG(canvas_mirror, true);
-
-	// This is a little trick to get the SRC attribute from the generated <img> screenshot
-	canvas_mirror.parentNode.appendChild(screenshot);
-	screenshot.id = "canvasimage";
-	data =  screenshot.src;
-	canvas_mirror.parentNode.removeChild(screenshot);
-
-
-	// Send the screenshot to PHP to save it on the server
-	var url = saveScript;
-
-    jQuery.ajax({
-
-	    type: "POST",
-	    url: url,
-	    dataType: 'text',
-	    data: {
-		id : MID,
-		trial : trialnumber,
-		score : score,
-		distance_inline : distance_inline,
-		distance_offline : distance_offline,
-		timeDiff : timeDiff,
-		crossings : crossings,
-		base64data : data
-	    }
-	});
-}
+// function saveCanvas() {
+//
+// 	// Get the canvas screenshot as PNG
+// 	var screenshot = Canvas2Image.saveAsPNG(canvas_mirror, true);
+//
+// 	// This is a little trick to get the SRC attribute from the generated <img> screenshot
+// 	canvas_mirror.parentNode.appendChild(screenshot);
+// 	screenshot.id = "canvasimage";
+// 	data =  screenshot.src;
+// 	canvas_mirror.parentNode.removeChild(screenshot);
+//
+//
+// 	// Send the screenshot to PHP to save it on the server
+// 	var url = saveScript;
+//
+//     jQuery.ajax({
+//
+// 	    type: "POST",
+// 	    url: url,
+// 	    dataType: 'text',
+// 	    data: {
+// 		id : MID,
+// 		trial : trialnumber,
+// 		score : score,
+// 		distance_inline : distance_inline,
+// 		distance_offline : distance_offline,
+// 		timeDiff : timeDiff,
+// 		crossings : crossings,
+// 		base64data : data
+// 	    }
+// 	});
+// }
 
 }
