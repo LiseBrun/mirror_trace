@@ -93,7 +93,7 @@ var materials = {
 	 if (event.key === "Enter") {
 		 drawing = false;
 		 finished = true;
-		 document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
+		 //document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
 		 // document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
 	 }
  });
