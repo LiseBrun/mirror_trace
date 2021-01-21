@@ -288,7 +288,7 @@ function do_mirror() {
 			}
 			ctx_mirror.stroke();
 			//remove score display during task :
-			//document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
+			document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure.";
 			//document.getElementByID("status").innerHTML = p[0]+p[1]+p[2];
 
 		} else {
@@ -323,7 +323,7 @@ function do_mirror() {
 				//remove score display at the end of the task:
 				//document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
 				//display "you have finished the task"
-				// document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
+				document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche bleue en bas à droite pour continuer.";
 			}
 		}
 
