@@ -288,7 +288,8 @@ function do_mirror() {
 			}
 			ctx_mirror.stroke();
 			//remove score display during task :
-			document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure.";
+			//document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
+			//document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure.";
 			//document.getElementByID("status").innerHTML = p[0]+p[1]+p[2];
 
 		} else {
@@ -369,6 +370,7 @@ function do_mirror() {
 						startTime = new Date();
 						ctx_mirror.beginPath();
 						canvas.style.cursor = 'none';
+					        document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure."
 						if (mirror) {
 							ctx_mirror.moveTo(mywidth-mouse.x, myheight-mouse.y);
 						} else {
