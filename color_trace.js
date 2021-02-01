@@ -119,11 +119,11 @@ var materials = {
 //}
 
 
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e60.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e80.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e100.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/ligne.png",
-	// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/ligne10.png"
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e60.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e80.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/T0e100.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/ligne.png",
+				// "https://raw.githubusercontent.com/LiseBrun/mirror_trace/master/figures/ligne10.png"
 
 // 	'xstarts' : [32, 32, 32, 73, 86],
 // 	'ystarts' : [59, 59, 59, 228, 203],
@@ -366,7 +366,7 @@ function do_mirror() {
 			ctx_mirror.stroke();
 			//remove score display during task :
 			//document.getElementById("status").innerHTML = "Score = " + Math.round(score *100) +"% ";
-			//document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure.";
+			//document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure."
 			//document.getElementByID("status").innerHTML = p[0]+p[1]+p[2];
 
 		} else {
@@ -395,13 +395,13 @@ function do_mirror() {
 				ctx_mirror.fillStyle = 'green';
 				ctx_mirror.fill();
 				lastRefresh = currentRefresh
-				document.getElementById("status").innerHTML = "Cliquer sur le cercle vert pour commencer";
+				document.getElementById("status").innerHTML = "Cliquez sur le cercle vert pour commencer";
 			}
 			} else {
 				//remove score display at the end of the task:
 				//document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
 				//display "you have finished the task"
-				document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche bleue en bas à droite pour continuer.";
+				document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
 			}
 		}
 
@@ -447,7 +447,7 @@ function do_mirror() {
 						startTime = new Date();
 						ctx_mirror.beginPath();
 						canvas.style.cursor = 'none';
-					        document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure."
+						document.getElementById("status").innerHTML = "Rejoignez le cercle rouge en restant le plus possible sur les lignes de la figure."
 						if (mirror) {
 							ctx_mirror.moveTo(mywidth-mouse.x, myheight-mouse.y);
 						} else {
