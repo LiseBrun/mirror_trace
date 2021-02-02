@@ -402,7 +402,7 @@ function do_mirror() {
 				//remove score display at the end of the task:
 				//document.getElementById("status").innerHTML = "Finished with score = " + Math.round(score *100) + "%<BR> Click next to continue.";
 				//display "you have finished the task"
-				document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche à droite pour continuer.";
+				document.getElementById("status").innerHTML = "Vous avez terminé cet essai. Cliquez sur la flèche bleue en bas à droite pour continuer.";
 			}
 		}
 
