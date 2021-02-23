@@ -207,10 +207,12 @@ function do_mirror() {
 	currentRefresh = 0;
 
 	//drawing contexts for cursor area and mirrored area
-	canvas = document.querySelector('#paint');
+	canvas = document.create.Element('#paint');
 	ctx = canvas.getContext('2d');
-	canvas_mirror = document.querySelector('#mirror');
+	canvas_mirror = document.create.Element('#mirror');
 	ctx_mirror = canvas_mirror.getContext('2d');
+
+
   //remove the mouse cursor display
 	//canvas.style.cursor = 'none';
 
