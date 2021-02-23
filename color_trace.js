@@ -209,6 +209,8 @@ function do_mirror() {
 	//drawing contexts for cursor area and mirrored area
 	canvas = document.create.Element('#paint');
 	ctx = canvas.getContext('2d');
+	canvas.width = 100;
+	canvas.height = 100;
 	canvas_mirror = document.create.Element('#mirror');
 	ctx_mirror = canvas_mirror.getContext('2d');
 
